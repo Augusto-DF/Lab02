@@ -1,5 +1,10 @@
 #include "date.h"
 
+Date::Date(){
+	day 	= 0;
+	month 	= 0;
+	year 	= 0;
+}
 Date::Date(int d, int m, int y){
 	day 	= d;
 	month 	= m;
@@ -70,4 +75,12 @@ bool Date::operator<(Date& b){
 	else if (day < b.getDay() && year == b.getYear() && month == b.getMonth()){return true;}
 
 	else {return false;} 
+}
+
+Date& Date::operator=(Date& b){
+	day = b.getDay();
+	month = b.getMonth();
+	year = b.getYear();
+
+	return *this;
 }

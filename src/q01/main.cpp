@@ -1,26 +1,26 @@
 #include <iostream>
 
 #include "date.h"
+#include "funcionary.h"
 
 using namespace std;
 
 int main(){
 
-	Date a(22, 12, 2001);
-	Date b(22, 10, 2002);
+	Date aa(10,10,2000);
+	Date bb;
 
-	if(a > b){
-		std::cout << "pessoa a é mais nova que pessoa b" << endl;
-	}
+	bb = aa;
 
-	else if (a < b){
-		std::cout << "pessoa a é mais velha que pessoa b " << endl; 
-	}
+	cout << bb << endl;
 
-	else if (a == b) {
-		std::cout << "pessoa a e pessoa b tem a mesma idade" << endl;
-	}
+	Funcionary a("Jão", 1000.0, aa);
 
-	std::cout << a.diference(b) << endl;
+	Funcionary b("Caio", 20000.0, bb);
+
+	std::cout << a << endl;
+	std::cout << b << endl;
+
+	cout << a.getDate() << endl;
 
 }

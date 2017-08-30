@@ -27,7 +27,7 @@ debug: CFLAGS += -g -O0
 debug: questao01# questao02
 
 #Criação do executavel: questao01
-questao01: $(OBJ_DIR)/date.o $(OBJ_DIR)/main1.o
+questao01: $(OBJ_DIR)/date.o $(OBJ_DIR)/funcionary.o $(OBJ_DIR)/main1.o #$(OBJ_DIR)/funcionary.o
 	@echo	"======================"
 	@echo	"Carregando o alvo $@"
 	@echo	"======================"
@@ -38,6 +38,10 @@ questao01: $(OBJ_DIR)/date.o $(OBJ_DIR)/main1.o
 #Criação dos arquivos .o:
 #date.o
 $(OBJ_DIR)/date.o: $(SRC_DIR)/q01/date.cpp $(INC_DIR)/q01/date.h
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+#funcionary.o:
+$(OBJ_DIR)/funcionary.o: $(SRC_DIR)/q01/funcionary.cpp $(INC_DIR)/q01/funcionary.h
 	$(CC) -c $(CFLAGS) -o $@ $<
 
 #main.o

@@ -11,6 +11,7 @@ class Date{
 		int year;
 
 	public:
+		Date();
 		Date(int d, int m, int y);
 		Date(Date& date);
 
@@ -26,6 +27,8 @@ class Date{
 		friend std::ostream& operator<< (std::ostream &d0, Date &d);
 
 		/*friend std::ostream& operator>> (std::ostream &d0, Date &d);*/
+
+		Date& operator=(Date& b);
 
 		bool operator>(Date& b);
 
