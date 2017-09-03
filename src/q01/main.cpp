@@ -2,25 +2,23 @@
 
 #include "date.h"
 #include "funcionary.h"
+#include "ent.h"
 
 using namespace std;
 
 int main(){
 
-	Date aa(10,10,2000);
-	Date bb;
+	string a = "Dragonfly";
+	string b = "02.302.567/0001-56";
+	Date q(24,12,1990);
+	std::vector<Funcionary*> vF;
 
-	bb = aa;
+	vF.push_back(new Funcionary("Jão",2000.0,q));
 
-	cout << bb << endl;
+	Enterprise k(a,b,vF);
 
-	Funcionary a("Jão", 1000.0, aa);
+	std::cout << k << endl;
 
-	Funcionary b("Caio", 20000.0, bb);
-
-	std::cout << a << endl;
-	std::cout << b << endl;
-
-	cout << a.getDate() << endl;
+	k.addfun(new Funcionary("Jão",2000.0,q));
 
 }

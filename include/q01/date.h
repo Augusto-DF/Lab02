@@ -26,7 +26,7 @@ class Date{
 
 		friend std::ostream& operator<< (std::ostream &d0, Date &d);
 
-		/*friend std::ostream& operator>> (std::ostream &d0, Date &d);*/
+		friend std::istream& operator>> (std::istream &d0, Date &d);
 
 		Date& operator=(Date& b);
 

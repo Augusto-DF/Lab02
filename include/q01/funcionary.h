@@ -11,7 +11,7 @@ using std::string;
 class Funcionary{
 
 	private:
-		std::string name;
+		string name;
 		float salary;
 		Date date_;
 
@@ -27,7 +27,10 @@ class Funcionary{
 		Date& getDate();
 		void setDate(Date d);
 
+		bool operator==(Funcionary& func);
+
 		friend std::ostream& operator<< (std::ostream &func0, Funcionary &func);
+		friend std::istream& operator>> (std::istream &func0, Funcionary &func);
 };
 
 #endif

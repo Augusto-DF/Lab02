@@ -35,7 +35,19 @@ void Funcionary::setDate(Date d){
 	date_ = d;
 }
 
+bool Funcionary::operator== (Funcionary& func){
+	if(name == func.getName() && salary == func.getSalary() && date_ == func.getDate()){
+		return true;
+	}
+	else return false;
+}
+
 std::ostream& operator<< (std::ostream &func0, Funcionary &func){
-	func0 << func.getName() << "||" << func.getSalary() << "||" << func.getDate();
+	func0 << func.getName() << "	||	" << func.getSalary() << "	||	" << func.getDate();
+	return func0;
+}
+
+std::istream& operator>> (std::istream &func0, Funcionary &func){
+	func0 >> func.name >> func.salary >> func.date_;
 	return func0;
 }

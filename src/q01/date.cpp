@@ -48,10 +48,10 @@ std::ostream& operator<< (std::ostream &d0, Date &d){
 	return d0;
 }
 
-/*std::ostream& operator>> (std::ostream &d0, Date &d){
+std::istream& operator>> (std::istream &d0, Date &d){
 	d0 >> d.day >> d.month >> d.year;
 	return d0;
-}*/
+}
 
 bool Date::operator>(Date& b){
 	if(year > b.getYear()){return true;}
