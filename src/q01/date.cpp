@@ -49,7 +49,25 @@ std::ostream& operator<< (std::ostream &d0, Date &d){
 }
 
 std::istream& operator>> (std::istream &d0, Date &d){
-	d0 >> d.day >> d.month >> d.year;
+	std::cout << "Digite a data: ";
+	std::cout << "Dia: ";
+	d0 >> d.day;
+	while(d.day < 0 || d.day > 30){
+		std::cout << "Dia inválido escolha um dia entre 1 e 30: ";
+		d0 >> d.day;
+	}
+	std::cout << "Mes: ";
+	d0 >> d.month;
+	while(d.month < 0 || d.month > 12){
+		std::cout << "Dia inválido escolha um dia entre 1 e 12: ";
+		d0 >> d.month;
+	}
+	std::cout << "Ano: ";
+	d0 >> d.year;
+	while(d.year > 2017){
+		std::cout << "Funcionarios do futuro não são bem vindos, contrate outro ou coloque o ano certo: ";
+		d0 >> d.year;
+	}
 	return d0;
 }
 
@@ -65,7 +83,13 @@ bool Date::operator==(Date& b){
 	if(year == b.getYear() && month == b.getMonth() && day == b.getDay()){
 		return true;
 	}
+	else {return false;} 
+}
 
+bool Date::operator!=(Date& b){
+	if(year != b.getYear() && month != b.getMonth() && day != b.getDay()){
+		return true;
+	}
 	else {return false;} 
 }
 

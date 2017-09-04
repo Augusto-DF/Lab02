@@ -34,6 +34,8 @@ class Date{
 
 		bool operator==(Date& b);
 
+		bool operator!=(Date& b);
+
 		bool operator<(Date& b);
 };
 

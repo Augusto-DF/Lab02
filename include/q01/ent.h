@@ -14,8 +14,10 @@ class Enterprise{
 
 	public:
 
-		//Enterprise(); Achei que n havia necessidade de um construtor padrão, não parametrizado, uma vez que não existe empresa sem nome ou cnpj ou sem funcionario nenhum
-		Enterprise(string n, string cnpj_, std::vector<Funcionary*> fun);
+		static float nEnt;
+
+		Enterprise(); 
+		Enterprise(string n, string cnpj_, Funcionary* fun);
 		//Enterprise(Enterprise& ent); Tambem achei desnecessário o construtor cópia ja que duas empresas não podem ter o mesmo cnpj
 
 		string getName();
@@ -27,10 +29,15 @@ class Enterprise{
 		Funcionary* getFun();
 		void setFun(Funcionary* fun);
 
-		bool cmpr(Funcionary func);
-		void addfun(Funcionary* func);
+		bool cmpr();
+		void addfun();
+		void listfun();
+		void increasesal(float prct);
+		void experienceperiod(Date date_);
+		float media();
 
 		friend std::ostream& operator<< (std::ostream& ent0_, Enterprise& ent);
+		friend std::istream& operator>> (std::istream& ent0_, Enterprise& ent);
 		
 };
 

@@ -16,6 +16,8 @@ class Funcionary{
 		Date date_;
 
 	public:
+		static float nFun;
+		
 		Funcionary();
 		Funcionary(string n, float s, Date d);
 		Funcionary(Funcionary& func_);
@@ -26,8 +28,10 @@ class Funcionary{
 		void setSalary(float s);
 		Date& getDate();
 		void setDate(Date d);
+		int getnFun();
 
 		bool operator==(Funcionary& func);
+		bool operator!=(Funcionary& func);
 
 		friend std::ostream& operator<< (std::ostream &func0, Funcionary &func);
 		friend std::istream& operator>> (std::istream &func0, Funcionary &func);
